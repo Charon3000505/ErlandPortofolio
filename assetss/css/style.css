@@ -1,0 +1,636 @@
+:root {
+    /* Primary Colors */
+    --color-gray: #333333;
+    --color-red: #e70000;
+
+    /* Background & Base */
+    --color-background: #000000;
+    --color-text: #e70000;
+
+    /* Accent */
+    --color-hover: #F5F5F5;
+
+    /* Extra Shades */
+    --color-white: #FFFFFF;
+    --color-dark: #121212;
+
+    /* Font Family */
+    --body-font-family: 'Poppins', sans-serif;
+
+    /* Font Sizes */
+    --big-font-size: 1.5rem;
+    --h1-font-size: 4.5rem;
+    --h2-font-size: 3.5rem;
+    --h3-font-size: 2.5rem;
+    --larger-font-size: 1.8rem;
+    --normal-font-size: 1.4rem;
+    --small-font-size: 1.2rem;
+
+    /* Font Weights */
+    --font-weight-regular: 400;
+    --font-weight-medium: 500;
+    --font-weight-semibold: 600;
+    --font-weight-bold: 700;
+
+    /* Effects */
+    --brightness: 0.8;
+    --blur: 4px;
+}
+
+/* Global Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: var(--body-font-family);
+}
+
+html {
+    scroll-behavior: smooth;
+    overflow-x: hidden;
+}
+
+body {
+    width: 100%;
+    min-height: 90vh;
+    overflow-x: hidden;
+    background-color: var(--color-background);
+}
+
+/* Navigation */
+nav {
+    width: 100%;
+    height: 10vh;
+    position: sticky;
+}
+
+.nav-container {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    background-color: var(--color-gray);
+}
+
+.logo {
+    font-size: var(--h2-font-size);
+    font-weight: bolder;
+    color: var(--color-red);
+}
+
+.logo a {
+    color: var(--color-red);
+    text-shadow: 0px 0px 5px var(--color-dark);
+    text-decoration: none;
+    transition: all 0.3s linear;
+}
+
+.logo a:hover {
+    scale: 1.1;
+    color: var(--color-white);
+}
+
+.nav-container .nav-links {
+    display: flex;
+    gap: 3rem;
+    align-items: center;
+}
+
+.nav-container .nav-links a {
+    position: relative;
+    font-size: var(--normal-font-size);
+    color: var(--color-red);
+    text-decoration: none;
+    font-weight: var(--font-weight-regular);
+    transition: 0.3s linear;
+}
+
+.nav-container .nav-links a::before {
+    content: "";
+    position: absolute;
+    width: 0;
+    height: 2px;
+    background-color: var(--color-red);
+    bottom: -5px;
+    left: 0;
+    transition: 0.2s linear;
+}
+
+.nav-container .nav-links a:hover::before {
+    width: 100%;
+}
+
+.nav-container .contact-btn a {
+    background-color: transparent;
+    padding: 5px 20px;
+    border-radius: 20px;
+    border: 2px solid var(--color-red);
+    color: var(--color-red);
+    transition: 0.3s linear;
+}
+
+.social-links a {
+    color: var(--color-red);
+    font-size: 2rem; 
+    transition: 0.3s;
+}
+
+.social-links a:hover {
+    color: var(--color-white);
+}
+
+
+.hamburger, .cancel {
+    cursor: pointer;
+    position: absolute;
+    right: 15px;
+    top: 10px;
+    color: var(--color-white);
+    font-size: var(--larger-font-size);
+    display: none;
+}
+
+.dropdown {
+    z-index: 100;
+    position: absolute;
+    top: 0;
+    transform: translateY(-500px);
+    width: 300%;
+    height: auto;
+    backdrop-filter: brightness(var(--brightness)) blur(var(--blur));
+    box-shadow: 0px 0px 20px var(--color-dark);
+    transition: 0.2s linear;
+}
+
+.dropdown .hamburger-links a {
+    color: var(--color-text);
+    display: flex;
+    text-decoration: none;
+    justify-content: center;
+    padding: 15px 0;
+    align-items: center;
+    transition: 0.2s linear;
+}
+
+.dropdown .hamburger-links a:hover {
+    background-color: var(--color-white);
+}
+
+/* Hero Section */
+section {
+    width: 100%;
+    height: 90vh;
+}
+
+.main-container {
+    width: 100%;
+    height: 90vh;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    flex-direction: row-reverse;
+    margin-top: 6rem;
+}
+
+.image {
+    z-index: -1;
+    width: 30%;
+}
+
+.image img {
+    width: 400px;
+    height: auto;
+    border-radius: 20px;
+}
+
+.content {
+    color: var(--color-text);
+    width: 50%;
+    min-height: 100px;
+}
+
+.content h1 {
+    font-size: var(--h1-font-size);
+    font-weight: var(--font-weight-bold);
+    margin-bottom: 20px;
+}
+
+.content h1 span {
+    color: var(--color-white);
+    font-weight: var(--font-weight-bold);
+    text-shadow: var(--color-text);
+}
+
+/* Typewriter Effect */
+.typewriter {
+    font-size: var(--larger-font-size);
+    font-weight: var(--font-weight-bold);
+    color: var(--color-text);
+    margin-bottom: 20px;
+    position: relative;
+}
+
+.typewriter span {
+    font-size: var(--h1-font-size);
+    color: var(--color-white);
+    text-shadow: var(--color-red) 0px 0px 5px;
+    transition: 0.3s linear;
+}
+
+.typewriter span::before {
+    content: "Developer";
+    animation: words 20s infinite;
+}
+
+.typewriter span::after {
+    content: "|";
+    position: absolute;
+    animation: cursor 0.6s linear infinite;
+}
+
+.content p {
+    font-size: var(--normal-font-size);
+    margin: 20px 0;
+}
+
+/* Download CV Button */
+.btn {
+    margin-top: 20px;
+}
+
+.download-btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    background: var(--color-red);
+    color: var(--color-white);
+    padding: 10px 20px;
+    border-radius: 8px;
+    font-weight: var(--font-weight-bold);
+    text-decoration: none;
+    transition: 0.3s ease;
+}
+
+.download-btn i {
+    font-size: 1rem;
+}
+
+.download-btn:hover {
+    background: var(--color-gray);
+    color: var(--color-red);
+}
+
+/* Animations */
+@keyframes cursor {
+    0%, 100% { opacity: 1; }
+    50% { opacity: 0; }
+}
+
+@keyframes words {
+    0% { content: "Developer"; }
+    20% { content: "Designer"; }
+    40% { content: "Coder"; }
+    60% { content: "Creator"; }
+    80% { content: "Tech Enthusiast"; }
+    100% { content: "Programmer"; }
+}
+
+/* Responsive */
+@media screen and (max-width: 884px) {
+    .logo {
+        position: absolute;
+        top: 16px;
+        left: 16px;
+        font-size: var(--larger-font-size);
+    }
+
+    .main-container {
+        flex-direction: column;
+    }
+
+    .nav-container .nav-links {
+        display: none;
+    }
+
+    .hamburger, .cancel {
+        display: block;
+    }
+
+    .content {
+        width: 90%;
+    }
+
+    .main-container .image {
+        width: 40%;
+    }
+}
+
+/* About Section */
+#about {
+    width: 100%;
+    min-height: 100vh;
+    background-color: var(--color-background);
+    padding: 80px 10%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.about-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 2rem;
+    align-items: center;
+    animation: fadeSlideUp 1s ease forwards;
+    opacity: 0;
+    transform: translateY(50px);
+}
+
+.about-image img {
+    width: 300px;
+    height: auto;
+    border-radius: 20px;
+    box-shadow: 0 0 20px var(--color-red);
+    transition: transform 0.3s ease;
+}
+
+.about-image img:hover {
+    transform: scale(1.05);
+}
+
+.about-content {
+    flex: 1;
+    color: var(--color-text);
+}
+
+.about-content h2 {
+    font-size: var(--h2-font-size);
+    margin-bottom: 20px;
+    color: var(--color-red);
+}
+
+.about-content p {
+    font-size: var(--normal-font-size);
+    line-height: 1.8;
+    color: var(--color-white);
+    margin-bottom: 20px;
+}
+
+.about-content span {
+    color: var(--color-red);
+    font-weight: var(--font-weight-bold);
+}
+
+
+
+/* Animation */
+@keyframes fadeSlideUp {
+    0% {
+        opacity: 0;
+        transform: translateY(50px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Skills Section */
+#skills {
+    width: 100%;
+    min-height: 100vh;
+    background-color: var(--color-background);
+    padding: 80px 10%;
+    color: var(--color-white);
+}
+
+.skills-container {
+    max-width: 800px;
+    margin: auto;
+    animation: fadeSlideUp 1s ease forwards;
+    opacity: 0;
+    transform: translateY(50px);
+}
+
+.skills-container h2 {
+    text-align: center;
+    font-size: var(--h2-font-size);
+    color: var(--color-red);
+    margin-bottom: 10px;
+}
+
+.skills-intro {
+    text-align: center;
+    color: var(--color-hover);
+    margin-bottom: 40px;
+}
+
+.skill {
+    margin-bottom: 20px;
+}
+
+.skill-name {
+    font-weight: var(--font-weight-bold);
+    margin-bottom: 8px;
+}
+
+.skill-bar {
+    width: 100%;
+    background-color: var(--color-gray);
+    border-radius: 8px;
+    overflow: hidden;
+}
+
+.skill-fill {
+    background-color: var(--color-red);
+    color: var(--color-white);
+    padding: 6px;
+    text-align: right;
+    border-radius: 8px;
+    font-weight: var(--font-weight-bold);
+    transition: width 1.2s ease-in-out;
+}
+
+/* Reuse Animation */
+@keyframes fadeSlideUp {
+    0% {
+        opacity: 0;
+        transform: translateY(50px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+/* Certificate Section */
+#certificate {
+    width: 100%;
+    background-color: var(--color-background);
+    padding: 80px 10%;
+    text-align: center;
+}
+
+.certificate-container h2 {
+    font-size: var(--h2-font-size);
+    margin-bottom: 40px;
+    color: var(--color-red);
+}
+
+.certificate-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 20px;
+}
+
+.certificate-card {
+    background-color: var(--color-gray);
+    border-radius: 15px;
+    padding: 15px;
+    box-shadow: 0 0 15px rgba(0,0,0,0.4);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.certificate-card img {
+    width: 100%;
+    height: auto;
+    border-radius: 10px;
+    margin-bottom: 10px;
+    box-shadow: 0 0 10px var(--color-red);
+}
+
+.certificate-card p {
+    color: var(--color-white);
+    font-size: var(--normal-font-size);
+    font-weight: var(--font-weight-medium);
+}
+
+.certificate-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 0 20px var(--color-red);
+}
+/* contact section */
+/* Contact Section */
+#contact {
+    width: 100%;
+    background-color: var(--color-background);
+    padding: 80px 10%;
+    color: var(--color-white);
+}
+
+.contact-container {
+    text-align: center;
+}
+
+.contact-container h2 {
+    font-size: var(--h2-font-size);
+    margin-bottom: 15px;
+    color: var(--color-red);
+}
+
+.contact-container p {
+    font-size: var(--normal-font-size);
+    margin-bottom: 40px;
+    color: var(--color-gray-light);
+}
+
+.contact-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+    gap: 40px;
+    align-items: start;
+}
+
+/* Contact Info */
+.contact-info p {
+    font-size: var(--normal-font-size);
+    margin-bottom: 15px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.contact-info i {
+    color: var(--color-red);
+    font-size: 1.2rem;
+}
+
+/* Contact Form */
+.contact-form {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.contact-form input,
+.contact-form textarea {
+    padding: 12px;
+    border: none;
+    border-radius: 8px;
+    background-color: var(--color-gray);
+    color: var(--color-white);
+    font-size: var(--normal-font-size);
+    outline: none;
+}
+
+.contact-form button {
+    background-color: var(--color-red);
+    color: var(--color-white);
+    padding: 12px;
+    border: none;
+    border-radius: 8px;
+    font-size: var(--normal-font-size);
+    font-weight: bold;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.contact-form button:hover {
+    background-color: var(--color-white);
+    color: var(--color-red);
+}
+/* Contact section fix */
+#contact {
+    padding-bottom: 60px; /* Biar ada jarak dari footer */
+}
+
+/* Footer */
+footer {
+    background-color: #111;
+    padding: 30px 20px;
+    text-align: center;
+    color: #ccc;
+    margin-top: 80px;
+}
+
+footer .footer-name {
+    color: red;
+    margin-bottom: 5px;
+}
+
+footer p {
+    margin: 5px 0;
+    font-size: 0.9rem;
+}
+
+footer .footer-social {
+    margin: 15px 0;
+}
+
+footer .footer-social a {
+    color: white;
+    margin: 0 12px;
+    font-size: 28px; /* Perbesar icon */
+    transition: color 0.3s ease, transform 0.3s ease;
+}
+
+footer .footer-social a:hover {
+    color: red;
+    transform: scale(1.2);
+}
+
+.footer-copy {
+    font-size: 0.85rem;
+    color: #aaa;
+    margin-top: 10px;
+}

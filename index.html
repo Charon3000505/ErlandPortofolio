@@ -1,0 +1,234 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Erland Portfolio</title>
+
+    <!-- CSS -->
+    <link rel="stylesheet" href="assetss/css/style.css">
+
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
+    <!-- AOS Animation -->
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+</head>
+<body>
+    <!-- Navigation Bar -->
+    <nav>
+        <div class="nav-container">
+            <div class="logo">
+                <a href="#">Erland</a>
+            </div>
+
+            <div class="nav-links">
+                <div class="link"><a href="#home">Home</a></div>
+                <div class="link"><a href="#about">About</a></div>
+                <div class="link"><a href="#skills">Skills</a></div>
+                <div class="link"><a href="#certificate">Certificate</a></div>
+                <div class="contact-btn"><a href="#contact">Contact Us</a></div>
+            </div>
+
+            <!-- Hamburger Menu -->
+            <div class="hamburger" onclick="hamburger()">
+                &#9776;
+            </div>
+        </div>
+
+        <!-- Dropdown Menu -->
+        <div class="dropdown">
+            <div class="hamburger-links">
+                <a href="#">Home</a>
+                <a href="#">About</a>
+                <a href="#">Skills</a>
+                <a href="#">Certificate</a>
+                <a href="#">Contact Us</a>
+                <div class="cancel" onclick="cancel()">&#10006;</div>
+            </div>
+        </div>
+    </nav>
+    <!-- Navigation Bar End -->
+
+    <!-- Main Section -->
+    <section class="main-container">
+        <div class="image" data-aos="fade-right">
+            <img src="assetss/src/brok.jpg" alt="Profile Picture">
+        </div>
+
+        <div class="content" data-aos="fade-left">
+            <h1>Hallo, I am <span>Erland</span></h1>
+            <div class="typewriter">I am <span></span></div>
+            <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Voluptas voluptatem possimus ea a fugit autem ut, quo adipisci minus temporibus rerum iure, alias, ad quod nostrum soluta veritatis unde ullam.</p>
+
+            <div class="social-links">
+                <a href="#" target="_blank"><i class="fa-brands fa-github"></i></a>
+                <a href="#" target="_blank"><i class="fa-brands fa-linkedin"></i></a>
+                <a href="#" target="_blank"><i class="fa-brands fa-twitter"></i></a>
+                <a href="#" target="_blank"><i class="fa-brands fa-instagram"></i></a>
+            </div>
+
+            <!-- Download CV Button -->
+            <div class="btn">
+                <a href="assetss/src/Erland_CV.pdf" download class="download-btn">
+                    <i class="fa-solid fa-download"></i> Download CV
+                </a>
+            </div>
+        </div>
+    </section>
+    <!-- Main Section End -->
+
+    <!-- About Me -->
+
+    <section id="about">
+    <div class="about-container">
+        <div class="about-image">
+            <img src="assetss/src/erland.jpg" alt="Profile">
+        </div>
+        <div class="about-content">
+            <h2>About Me</h2>
+            <p>
+                Hi! My name is <span>Erland</span>. I am passionate about technology and creativity, 
+                focusing on web development, design, and creating meaningful digital experiences. 
+                My goal is to continuously learn and grow, while building projects that inspire people.
+            </p>
+        </div>
+    </div>
+</section>
+    <!-- About Me End -->
+
+    <section id="skills">
+    <div class="skills-container">
+        <h2>My Skills</h2>
+        <p class="skills-intro">
+            Here are some of my technical skills and the level of my expertise in each.
+        </p>
+
+        <div class="skill">
+            <div class="skill-name">HTML</div>
+            <div class="skill-bar">
+                <div class="skill-fill" style="width: 90%;">90%</div>
+            </div>
+        </div>
+
+        <div class="skill">
+            <div class="skill-name">CSS</div>
+            <div class="skill-bar">
+                <div class="skill-fill" style="width: 85%;">85%</div>
+            </div>
+        </div>
+
+        <div class="skill">
+            <div class="skill-name">JavaScript</div>
+            <div class="skill-bar">
+                <div class="skill-fill" style="width: 75%;">75%</div>
+            </div>
+        </div>
+
+        <div class="skill">
+            <div class="skill-name">Python</div>
+            <div class="skill-bar">
+                <div class="skill-fill" style="width: 70%;">70%</div>
+            </div>
+        </div>
+    </div>
+</section>
+    <!-- Skills End -->
+
+    <!-- certificate -->
+    <section id="certificate">
+    <div class="certificate-container">
+        <h2>My Certificates</h2>
+        <div class="certificate-grid">
+            <div class="certificate-card" data-aos="fade-up">
+                <img src="assetss/src/certificate1.jpg" alt="Certificate 1">
+                <p>COMING SOON</p>
+            </div>
+            <div class="certificate-card" data-aos="fade-up" data-aos-delay="100">
+                <img src="assetss/src/certificate2.jpg" alt="Certificate 2">
+                <p>COMING SOON</p>
+            </div>
+            <div class="certificate-card" data-aos="fade-up" data-aos-delay="200">
+                <img src="assetss/src/certificate3.jpg" alt="Certificate 3">
+                <p>COMING SOON</p>
+            </div>
+        </div>
+    </div>
+</section>
+    <!-- Certificate End -->
+    
+    <!-- Contact Me -->
+    <section id="contact">
+    <div class="contact-container">
+        <h2>Contact Me</h2>
+        <p>Feel free to reach out to me for collaborations or just a friendly hello 👋</p>
+
+        <div class="contact-grid">
+            <div class="contact-info" data-aos="fade-right">
+                <p><i class="fa-solid fa-envelope"></i> erlandidn@gmail.com</p>
+                <p><i class="fa-solid fa-phone"></i> +62 812-3456-7890</p>
+                <p><i class="fa-brands fa-linkedin"></i> linkedin.com/in/erland</p>
+                <p><i class="fa-brands fa-github"></i> github.com/erlandidn</p>
+            </div>
+
+            <form class="contact-form" action="mailto:erland@example.com" method="post" enctype="text/plain" data-aos="fade-left">
+                <input type="text" name="name" placeholder="Your Name" required>
+                <input type="email" name="email" placeholder="Your Email" required>
+                <textarea name="message" placeholder="Your Message" rows="5" required></textarea>
+                <button type="submit">
+                    <i class="fa-solid fa-paper-plane"></i> Send Message
+                </button>
+            </form>
+        </div>
+    </div>
+</section>
+    <!-- Contact Me End -->
+
+
+    <!-- Scripts -->
+    <script>
+        function hamburger() {
+            document.querySelector(".dropdown").style.transform = "translateY(0)";
+        }
+        function cancel() {
+            document.querySelector(".dropdown").style.transform = "translateY(-500px)";
+        }
+    </script>
+
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script>
+        AOS.init();
+    </script>
+
+    <script>
+document.addEventListener("scroll", function() {
+    const aboutSection = document.querySelector(".about-container");
+    const sectionPosition = aboutSection.getBoundingClientRect().top;
+    const screenPosition = window.innerHeight / 1.3;
+
+    if(sectionPosition < screenPosition) {
+        aboutSection.style.opacity = "1";
+        aboutSection.style.transform = "translateY(0)";
+    }
+});
+</script>
+
+
+<footer>
+    <div class="footer-container">
+        <h2 class="footer-name">Erland</h2>
+        <p>Web Developer | Tech Enthusiast | Lifelong Learner</p>
+
+        <div class="footer-social">
+            <a href="#" target="_blank"><i class="fa-brands fa-github"></i></a>
+            <a href="#" target="_blank"><i class="fa-brands fa-linkedin"></i></a>
+            <a href="#" target="_blank"><i class="fa-brands fa-twitter"></i></a>
+            <a href="#" target="_blank"><i class="fa-brands fa-instagram"></i></a>
+        </div>
+
+        <p class="footer-copy">© 2025 Erland. All rights reserved.</p>
+    </div>
+</footer>
+
+</body>
+</html>

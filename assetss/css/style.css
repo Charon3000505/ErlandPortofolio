@@ -146,7 +146,7 @@ nav {
     position: absolute;
     right: 15px;
     top: 10px;
-    color: var(--color-white);
+    color: var(--color-red);
     font-size: var(--larger-font-size);
     display: none;
 }
@@ -164,8 +164,10 @@ nav {
 }
 
 .dropdown .hamburger-links a {
-    color: var(--color-text);
+    color: red;
+    z-index: 10000;
     display: flex;
+    flex-direction: column;
     text-decoration: none;
     justify-content: center;
     padding: 15px 0;
@@ -174,7 +176,7 @@ nav {
 }
 
 .dropdown .hamburger-links a:hover {
-    color: var(--color-text);
+    color: var(--color-dark);
     background-color: var(--color-white);
 }
 
